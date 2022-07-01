@@ -1,7 +1,8 @@
 export default class CurrencyExchange {
   static async getCurrencyExchange(currency) {
     try {
-      const response = await fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currency}`); 
+      let url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currency}`;
+      const response = await fetch(url); 
       if (!response.ok) {
         throw Error(response.statusText);
       }
