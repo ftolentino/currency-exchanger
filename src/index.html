@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <title>Pokémon</title>
+  <title>Currency Exchange</title>
 </head>
 <body>
   <div class="d-flex flex-column align-items-center container">
     <h1 class="display-1 text-center">Currency Exchange</h1>
     <hr>
-    <input id="currencyInput" type="submit" >
-    <button class="d-block my-4 btn btn-primary" id="form-button">Click Me!</button>
+    <input id="currencyInput" type="number" >
+    <div class="input-group">
+      <select class="custom-select" id="inputGroupSelect04" aria-label="select menu for currency">
+        <option selected>Choose...</option>
+        <option value="eur">EUR - European Union </option>
+        <option value="cad">CAD - Canada</option>
+        <option value="gbp">GBP - United Kingdom</option>
+        <option value="mxn">MXN - Mexico</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">Button</button>
+      </div>
+    </div>
 
     <div id="output">
     </div>
