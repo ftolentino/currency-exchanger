@@ -17,9 +17,8 @@ async function makeApiCall(currency) {
 }
 
 $(document).ready(function () {
-  $('#currencyInput').submit(function (event) {
-    event.preventDefault();
-    let currencyEx = $("#currencyInput").val();
+  $('#form-button').click(function () {
+    let currencyEx = $("#country").val();
     makeApiCall(currencyEx);
   });
 });
