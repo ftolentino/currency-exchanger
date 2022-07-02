@@ -6,19 +6,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
 function getElements(response) {
-  if(response) {
-    console.log(response);
+  if(response.conversion_rates) {
+    console.log(convertCurrency());
   }
+  function convertCurrency() {
+    let userUSD = $('#usdInput').val();
+    let countryCode = $("#country").val();
+    let result = parseFloat((userUSD * countryCode).toFixed(2));
+    return result;
+  }
+  
 }
 
-async function makeApiCall(currency) {
-  const response = await CurrencyExchange.getCurrencyExchange(currency);
+async function makeApiCall() {
+  const response = await CurrencyExchange.getCurrencyExchange();
   getElements(response);
 }
 
 $(document).ready(function () {
   $('#form-button').click(function () {
     let currencyEx = $("#country").val();
-    makeApiCall(currencyEx);
+    console.log(currencyEx);
+    makeApiCall();
   });
 });
