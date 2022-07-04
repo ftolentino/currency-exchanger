@@ -8,28 +8,23 @@ import './css/styles.css';
 function getElements(response) {
   if(response) {
     const body = response;
-    let countries = body;
-    console.log(countries);
-    // $("#output").text(countries);
+    let conversionRate = body.conversion_rate;
+    let usd = $("#usdInput").val();
+    console.log(conversionRate);
+    let result = conversion(usd, conversionRate);
+    console.log(result);
   } else {
     $(".showError").text(`there was an error processing your request; ${response}`);
   }
-  // function convertCurrency() {
-  //   let userUSD = $('#usdInput').val();
-  //   let countryCode = $("#country").val();
-  //   let result = parseFloat((userUSD * countryCode).toFixed(2));
-  //   return result;
-  // }
-  
 }
 
 $(document).ready(function () {
   $('#form-button').click(function () {
     let country = $("#country").val();
     let amount = $("#usdInput").val();
-    makeApiCall(country);
+    
     console.log(amount);
-    conversion(country, amount);
+    makeApiCall(country);
   });
 });
 
@@ -38,9 +33,9 @@ async function makeApiCall(country) {
   getElements(response);
 }
 
-function conversion (country, amount) {
+function conversion (amount, country) {
   let countryCode = country;
   let usdAmount = amount;
 
-  return usdAmount * countryCode;
+  return parseFloat((usdAmount * countryCode).toFixed(2));
 }
