@@ -14,7 +14,6 @@ _This application lets you convert US currency into another country's currency, 
 * _JS_
 * _jQuery_
 * _Github_
-* _Jest_
 * _webpack_
 * _Babel_
 * _npm package manager_
