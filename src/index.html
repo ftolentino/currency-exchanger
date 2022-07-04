@@ -4,28 +4,29 @@
   <title>Currency Exchange</title>
 </head>
 <body>
-  <div class="d-flex flex-column align-items-center container">
-    <h1 class="display-1 text-center">Currency Exchange</h1>
-    <hr>
-    <input id="usdInput" type="number" >
-    <div class="input-group">
-      <select class="custom-select" id="country" aria-label="select menu for currency">
-        <option selected>Choose...</option>
-        <option value="eur">EUR - Euro</option>
-        <option value="cad">CAD - Canadian Dollar</option>
-        <option value="gbp">GBP - Pound Sterling</option>
-        <option value="mxn">MXN - Mexican Peso</option>
-        <option value="php">PHP - Philippine Peso</option>
-      </select>
-      <div class="input-group-append">
-        <button id="form-button" class="btn btn-outline-secondary" type="button">Button</button>
+  <div class="container">
+    <h1 class="display-1 text-center my-4 py-4">Currency Exchange</h1>
+    <div class="d-flex flex-row justify-content-center mt-4">
+      <input id="usdInput" type="number" min="0" required>
+      <div class="input-group mx-2">
+        <select class="custom-select" id="country" aria-label="select menu for currency">
+          <option selected>Choose...</option>
+          <option value="eur">EUR - Euro</option>
+          <option value="cad">CAD - Canadian Dollar</option>
+          <option value="gbp">GBP - Pound Sterling</option>
+          <option value="mxn">MXN - Mexican Peso</option>
+          <option value="php">PHP - Philippine Peso</option>
+        </select>
+        <div class="input-group-append">
+          <button id="form-button" class="mx-2 btn btn-primary" type="button">Button</button>
+        </div>
       </div>
-    </div>
-
-    <div id="output">
-    </div>
-    
-    <div class="showError">
+  
+      <div id="output">
+      </div>
+      
+      <div class="showError">
+      </div>
     </div>
   </div>
 </body>
