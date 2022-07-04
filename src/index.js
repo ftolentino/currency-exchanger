@@ -7,10 +7,10 @@ import './css/styles.css';
 
 function getElements(response) {
   if(response) {
-    console.log(response);
     const body = response;
-    let countries = body.conversion_rates;
-    $("#output").text(countries)
+    let countries = body;
+    console.log(countries);
+    // $("#output").text(countries);
   } else {
     $(".showError").text(`there was an error processing your request; ${response}`);
   }
@@ -23,16 +23,24 @@ function getElements(response) {
   
 }
 
+$(document).ready(function () {
+  $('#form-button').click(function () {
+    let country = $("#country").val();
+    let amount = $("#usdInput").val();
+    makeApiCall(country);
+    console.log(amount);
+    conversion(country, amount);
+  });
+});
+
 async function makeApiCall(country) {
   let response = await CurrencyExchange.getCurrencyExchange(country);
   getElements(response);
 }
 
-$(document).ready(function () {
-  $('#form-button').click(function () {
-    let country = $("#country").val();
-    // let amount = $("#usdInput").val();
-    console.log(makeApiCall(country));
-    makeApiCall(country);
-  });
-});
+function conversion (country, amount) {
+  let countryCode = country;
+  let usdAmount = amount;
+
+  return usdAmount * countryCode;
+}
