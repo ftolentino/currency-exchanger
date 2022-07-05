@@ -38,8 +38,8 @@ _This application lets you convert US currency into another country's currency, 
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _a result prints NaN to the DOM when the user doesn't select a number or drop down selection_
+
 
 ## License
 * MIT
